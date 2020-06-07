@@ -10,10 +10,8 @@ import Header from "./Components/Header";
 
 export const API_BASE_URL = '<< put your api base url here >>';
 export const COGNITO_BASE_URL = '<< put the cognito base url here >>';
-export const APP_GRANT_TYPE = 'authorization_code';
 export const APP_REDIRECT_URI = '<< put your cloudfront url here >>/authenticate';
 export const APP_CLIENT_ID = '<< put your amazon app client id here >>';
-export const APP_CLIENT_SECRET = '<< put your amazon app client secret here >>';
 
 
 function App() {

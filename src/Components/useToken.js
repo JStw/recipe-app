@@ -10,7 +10,7 @@ function useToken() {
         const authResult = new URLSearchParams(window.location.search);
         const code = authResult.get('code')
 
-        fetch(`${API_BASE_URL}/token`)
+        fetch(`${API_BASE_URL}/token/${code}`)
             .then(response => {
                 if (!response) {
                     throw new Error('No response found from Cognito')

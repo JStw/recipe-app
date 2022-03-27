@@ -13,7 +13,6 @@ export const COGNITO_BASE_URL = 'https://recipe.auth.us-east-1.amazoncognito.com
 export const APP_REDIRECT_URI = 'https://d1ynvwrx627ssr.cloudfront.net/authenticate';
 export const APP_CLIENT_ID = '738coo3jhas54jm97mjh5nmnmm';
 
-
 function App() {
     return (
         <Router>

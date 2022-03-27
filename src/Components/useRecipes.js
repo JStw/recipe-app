@@ -11,9 +11,8 @@ function useRecipes() {
 
         fetch(`${API_BASE_URL}/recipes`, {headers})
             .then(response => {
-                console.log('recipes error')
                 if (response.status === 401) {
-                    
+                    setRecipes({loading: false, unauthorized: true, data: []})
                     throw new Error('You are not authorized to see this content.')
                 }
 

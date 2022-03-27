@@ -11,13 +11,16 @@ function useRecipes() {
 
         fetch(`${API_BASE_URL}/recipes`, {headers})
             .then(response => {
+                console.log('recipes error')
                 if (response.status === 401) {
+                    
                     throw new Error('You are not authorized to see this content.')
                 }
 
                 return Promise.resolve(response.json())
             })
             .then(data => {
+               
                 setRecipes({loading: false, unauthorized: false, data: !data || !data.length ? [] : data});
             })
             .catch(error => {

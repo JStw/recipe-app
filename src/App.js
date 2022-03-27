@@ -13,6 +13,9 @@ export const COGNITO_BASE_URL = 'https://recipe.auth.us-east-1.amazoncognito.com
 export const APP_REDIRECT_URI = 'https://d1ynvwrx627ssr.cloudfront.net/authenticate';
 export const APP_CLIENT_ID = '738coo3jhas54jm97mjh5nmnmm';
 
+export const LOGIN_URL =  `${COGNITO_BASE_URL}/login?response_type=code&client_id=${APP_CLIENT_ID}&redirect_uri=${APP_REDIRECT_URI}`
+
+
 function App() {
     return (
         <Router>
@@ -33,6 +36,12 @@ function App() {
                 <Route exact path="/logout">
                     <Logout/>
                 </Route>
+                <Route path='/login' component={() => { 
+                        window.location.href = LOGIN_URL; 
+                        return null;
+                   }}>
+                </Route>    
+                   
             </Switch>
         </Router>
     );

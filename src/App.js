@@ -8,10 +8,12 @@ import Logout from "./Components/Logout";
 import Home from "./Components/Home";
 import Header from "./Components/Header";
 
-export const API_BASE_URL = '<< put your api base url here >>';
-export const COGNITO_BASE_URL = '<< put the cognito base url here >>';
-export const APP_REDIRECT_URI = '<< put your cloudfront url here >>/authenticate';
-export const APP_CLIENT_ID = '<< put your amazon app client id here >>';
+export const API_BASE_URL = 'https://9sx5ad2dy1.execute-api.us-east-1.amazonaws.com';
+export const COGNITO_BASE_URL = 'https://recipe.auth.us-east-1.amazoncognito.com';
+export const APP_REDIRECT_URI = 'https://d1ynvwrx627ssr.cloudfront.net/authenticate';
+export const APP_CLIENT_ID = '738coo3jhas54jm97mjh5nmnmm';
+
+export const LOGIN_URL =  `${COGNITO_BASE_URL}/login?response_type=code&client_id=${APP_CLIENT_ID}&redirect_uri=${APP_REDIRECT_URI}`
 
 
 function App() {
@@ -34,6 +36,12 @@ function App() {
                 <Route exact path="/logout">
                     <Logout/>
                 </Route>
+                <Route path='/login' component={() => { 
+                        window.location.href = LOGIN_URL; 
+                        return null;
+                   }}>
+                </Route>    
+                   
             </Switch>
         </Router>
     );

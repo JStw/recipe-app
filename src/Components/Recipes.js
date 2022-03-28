@@ -10,7 +10,7 @@ function Recipes() {
         <div className="row">
             <div className="container mt-5">
                 <div className="mt-3">
-                    {recipes.unauthorized ? <Redirect to={`/unauthorized`}/> : ''}
+                    {recipes.unauthorized ? <Redirect to={`/login`}/> : ''}
                     <p>Recipes list</p>
                     <hr/>
                     {recipes.loading ? 'Pleas wait while loading your data...' : ''}
